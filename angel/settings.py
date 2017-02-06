@@ -25,7 +25,7 @@ SECRET_KEY = 'xoroa-hs@*dq6)c6y9)6=i%3#_zp&e205g^(od6s%4a#3mze(2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'angel.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'OPTIONS': {
             'read_default_file': os.path.join(BASE_DIR, 'my.cnf'),
-            'init_command': 'SET default_storage_engine=INNODB',
-            'sql_mode': 'traditional',
+            #'init_command': 'SET default_storage_engine=INNODB',
+            #'sql_mode': 'traditional',
         },
     }
 }
@@ -130,7 +130,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 
 
 # LOGIN_URL = '/'
