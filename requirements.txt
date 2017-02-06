@@ -8,6 +8,7 @@ selenium==3.0.2
 python-dateutil
 psycopg2==2.6.1
 gunicorn==19.6.0
+whitenoise
 
 # apt-get install nodejs
 # apt-get install nodejs-legacy
