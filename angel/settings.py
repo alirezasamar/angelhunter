@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 from whitenoise import WhiteNoise
+import dj_database_url
 
 import os
 
@@ -85,16 +86,8 @@ WSGI_APPLICATION = 'angel.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'angel',
-        'USER': 'angeluser',
-        'PASSWORD': 'alizera',
-        'HOST': '',
-        'PORT': '5432',
-    }
-}
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
