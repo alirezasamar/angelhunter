@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'angel.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'OPTIONS': {
-            'read_default_file': os.path.join(BASE_DIR, 'my.cnf'),
-            #'init_command': 'SET default_storage_engine=INNODB',
-            #'sql_mode': 'traditional',
-        },
+        'NAME': 'angel',
+        'USER': 'angeluser',
+        'PASSWORD': 'alizera',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
