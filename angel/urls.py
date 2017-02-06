@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.staticfiles import views
 
 urlpatterns = [
     url(r'^', admin.site.urls),
     url(r'^angel/', include('custom_admin.urls')),
 ]
+
+urlpatterns += [
+    url(r'^static/(?P<path>.*)$', views.serve),
+    ]
