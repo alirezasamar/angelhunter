@@ -1,0 +1,7 @@
+{
+  "name": "Angelhunter app",
+  "description": "Angelhunter app",
+  "repository": "https://github.com/alirezasmr/angelhunter",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}
