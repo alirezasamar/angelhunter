@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'django_cron',
     'custom_admin',
 ]
@@ -148,3 +149,8 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 CRON_CLASSES = [
     "custom_admin.views.MyCronJob",
 ]
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

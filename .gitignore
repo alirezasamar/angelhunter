@@ -1,2 +1,6 @@
 *.pyc
 staticfiles/
+
+angel/local_settings.py
+
+*.db
